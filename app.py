@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_smorest import Api
 
-import db
+from db import db
+from resources.pokemon import blp as PokemonBlueprint
 
 
 def create_app():
@@ -19,9 +20,11 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["PROPAGATE_EXCEPTIONS"] = True
     db.init_app(app)
-    # api = Api(app)
+    api = Api(app)
 
     with app.app_context():
         db.create_all()
+
+    api.register_blueprint(PokemonBlueprint)
 
     return app
