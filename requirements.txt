@@ -3,3 +3,4 @@ flask-smorest
 sqlalchemy
 flask-sqlalchemy
 marshmallow
+requests

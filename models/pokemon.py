@@ -1,8 +1,9 @@
 from db import db
 
-class PokemonModel(db.Model):
-  __tablename__ = "pokemons"
 
-  id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(80), unique=True, nullable=False)
-  
+class PokemonModel(db.Model):
+    __tablename__ = "pokemons"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+    abilities = db.relationship("AbilityModel", backref="pokemon", lazy="dynamic")
