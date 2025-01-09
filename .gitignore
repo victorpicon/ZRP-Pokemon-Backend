@@ -1,0 +1,9 @@
+/.flaskenv:Zone.Identifier
+/.venv
+/Dockerfile:Zone.Identifier
+/__pycache__
+/app.py:Zone.Identifier
+/db.py:Zone.Identifier
+/docker-compose.yml:Zone.Identifier
+/requirements.txt:Zone.Identifier
+/schemas.py:Zone.Identifier
