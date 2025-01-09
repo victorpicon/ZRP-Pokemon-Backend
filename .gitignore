@@ -7,3 +7,5 @@
 /docker-compose.yml:Zone.Identifier
 /requirements.txt:Zone.Identifier
 /schemas.py:Zone.Identifier
+/instance
+*.Zone.Identifier
