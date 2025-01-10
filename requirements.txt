@@ -6,3 +6,5 @@ marshmallow
 requests
 flask-cors
 gunicorn
+pytest
+pytest-flask
