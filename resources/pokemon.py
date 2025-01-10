@@ -21,6 +21,8 @@ class PokemonList(MethodView):
 
 @blp.route("/pokemon/<string:name>")
 class Pokemon(MethodView):
+    @blp.response(202, description="Return an Pokémon's abilities")
+    @blp.doc(description="Returns a Pokémon and its abilities")
     def get(self, name):
         pokemon = PokemonModel.query.filter_by(name=name.lower()).first()
         if pokemon:

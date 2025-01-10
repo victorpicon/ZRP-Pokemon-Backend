@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_smorest import Api
-
+from flask_cors import CORS
 from db import db
 from resources.pokemon import blp as PokemonBlueprint
 
 
 def create_app():
     app = Flask(__name__)
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
     app.config["API_TITLE"] = "Pokedex Abilities REST API"
     app.config["API_VERSION"] = "v1"
