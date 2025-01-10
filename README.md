@@ -12,7 +12,7 @@ The application was made for the technical challenge of ZRP Applications, a braz
     • API's Documentation on Swagger (/docs endpoint)
     • Unit tests with Pytest
     • Project Environment using Docker
-    • Pokémon Caching on Database for faster resend data.
+    • Pokémon database caching to avoid PokeApi downtimes.
 
 ## 💪 Improvement Points
     • Deploy with an Serverless Solution
