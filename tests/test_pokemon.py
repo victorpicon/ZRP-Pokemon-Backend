@@ -9,7 +9,6 @@ from models.pokemon import PokemonModel
 
 @patch("resources.pokemon.requests.get")
 def test_pokemon_abilities_order(mock_get, client):
-    # Simulando a resposta da PokéAPI com habilidades desordenadas
     mock_get.return_value.status_code = 200
     mock_get.return_value.json.return_value = {
         "abilities": [
@@ -18,17 +17,13 @@ def test_pokemon_abilities_order(mock_get, client):
         ]
     }
 
-    # Fazendo a requisição ao endpoint para buscar o Pokémon pela PokéAPI
     response = client.get("/pokemon/pikachu")
 
-    # Verificando o status da resposta
     assert response.status_code == 202
 
-    # Verificando se as habilidades retornadas estão em ordem alfabética
     abilities_response = response.json["abilities"]
     assert abilities_response == sorted(abilities_response)
 
-    # Verificando se as habilidades foram salvas no banco em ordem alfabética
     with client.application.app_context():
         abilities_in_db = [
             ability.name
